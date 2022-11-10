@@ -1,8 +1,24 @@
 # ai50-Tic-Tac-Toe
-Implementation of an AI to play Tic-Tac-Toe optimally
-https://cs50.harvard.edu/ai/2020/projects/0/tictactoe/
-<img src="https://cs50.harvard.edu/ai/2020/projects/0/tictactoe/images/game.png" width="900" />
 
+#### Implementation of an AI to play Tic-Tac-Toe optimally
+
+This is a Tic-Tac-Toe game that I made for the CS50-AI course. It is a two player game, where the first player is X and the second player is O. The game is played on a 3x3 board. The first player to get 3 of their marks in a row (up, down, across, or diagonally) is the winner. If all 9 squares are filled and neither player has 3 marks in a row, the game is a draw.
+
+<img src="https://cs50.harvard.edu/ai/2020/projects/0/tictactoe/images/game.png" width="800" />
+
+https://cs50.harvard.edu/ai/2020/projects/0/tictactoe/
+
+## Algorithm
+
+### Adversarial Search
+In artificial intelligence, deep learning, machine learning, and computer vision, adversarial search is basically a kind of search in which one can trace the movement of an enemy or opponent. The step which arises the problem for the user or the user or the agent doesn't want that specific step task to be carried out.
+
+### Minimax
+Minimax is a decision rule used in artificial intelligence, decision theory, game theory, statistics, and philosophy for minimizing the possible loss for a worst case (maximum loss) scenario. When dealing with gains, it is referred to as "maximin"—to maximize the minimum gain. Originally formulated for two-player zero-sum game theory, covering both the cases where players take alternate moves and those where they make simultaneous moves, it has also been extended to more complex games and to general decision-making in the presence of uncertainty.
+
+<img src="https://static.javatpoint.com/tutorial/ai/images/ai-adversarial-search.png" width="800" />
+
+> image source: https://static.javatpoint.com/tutorial/ai/images/ai-adversarial-search.png
 
 ## Specification
 Complete the implementations of player, actions, result, winner, terminal, utility, and minimax.
