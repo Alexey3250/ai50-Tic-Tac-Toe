@@ -46,33 +46,12 @@ MIN (O) aims to minimise score.
 
 > images source: https://www.youtube.com/watch?v=D5aJNFWsWew&ab_channel=CS50
 
-#### Pseudocode for minimax algorithm
 
-- Given *state* $s$:
-    - **MAX** picks action $a$ that produces highest value of **Min-Value**(Result($s, a$))
-    - **MIN** picks action $a$ that produces lowest value of **Max-Value**(Result($s, a$))
-<br>
-
-- Function **MAX-VALUE**(*state*):
-  - if **Terminal-Test**(*state*):
-    - return **Utility**(*state*)
-  - $v$ = -$\infty$
-  - for each *action* in **Actions**(*state*) do:
-      - $v$ = max($v$, **MIN-VALUE**(**Result**(*state*, *action*)))
-  - return $v$
-<br>
-
-- Function **MIN-VALUE**(*state*):
-  - if **Terminal-Test**(*state*):
-    - return **Utility**(*state*)
-  - $v$ = $\infty$
-  - for each *action* in **Actions**(*state*) do:
-      - $v$ = min($v$, **MAX-VALUE**(**Result**(*state*, *action*)))
 
 ### Alpha-Beta Pruning (optional, but may make your AI run more efficiently)
 Alpha–beta pruning is a search algorithm that seeks to decrease the number of nodes that are evaluated by the minimax algorithm in its search tree. It is an adversarial search algorithm used commonly for machine playing of two-player games (Tic-tac-toe, Chess, Go, etc.). It stops evaluating a move when at least one possibility has been found that proves the move to be worse than a previously examined move. Such moves need not be evaluated further. When applied to a standard minimax tree, it returns the same move as minimax would, but prunes away branches that cannot possibly influence the final decision. Alpha–beta pruning is a kind of minimax algorithm.
 
-> **Alfa-beta pruning is essentially cuts off redundant state calculations.**
+> **Alfa-beta pruning essentially cuts off redundant state calculations.**
 
 ##### Vizuallization of alpha-beta pruning
 

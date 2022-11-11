@@ -22,22 +22,44 @@ def player(board):
     """
     Returns player who has the next turn on a board.
     """
+    # Start count of turns
+    turnX = 0
+    turnO = 0
     
+    # For loop to count turns of X and O
+    for row in board:
+        for col in row:
+            if col == X:
+                turnX += 1
+            elif col == O:
+                turnO += 1
     
-    raise NotImplementedError
+    # Returns who's turn it is
+    return X if turnX == turnO else O
 
 
 def actions(board):
     """
     Returns set of all possible actions (i, j) available on the board.
     """
-    raise NotImplementedError
+    # Create a set of all possible actions
+    possibilities = set()
+    
+    # For loop to add all possible actions to the set
+    for row in range(3):
+        for col in range(3):
+            if board[row][col] == EMPTY:
+                possibilities.add((row, col))
+
+    # Return the set of all possible actions
+    return possibilities
 
 
 def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
     """
+    # dont forget to do a deep copy
     raise NotImplementedError
 
 
@@ -67,3 +89,7 @@ def minimax(board):
     Returns the optimal action for the current player on the board.
     """
     raise NotImplementedError
+
+# New implemented functions for a cleaner code
+
+#
