@@ -59,6 +59,7 @@ def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
     """
+    
     # dont forget to do a deep copy
     raise NotImplementedError
 
@@ -74,6 +75,7 @@ def terminal(board):
     """
     Returns True if game is over, False otherwise.
     """
+    
     raise NotImplementedError
 
 
