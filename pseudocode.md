@@ -2,26 +2,7 @@
 
 #### Pseudocode for minimax main algorithm
 
-- Given *state* $s$:
-    - **MAX** picks action $a$ that produces highest value of **Min-Value**(Result($s, a$))
-    - **MIN** picks action $a$ that produces lowest value of **Max-Value**(Result($s, a$))
-<br>
 
-- Function **MAX-VALUE**(*state*):
-  - if **Terminal-Test**(*state*):
-    - return **Utility**(*state*)
-  - $v$ = -$\infty$
-  - for each *action* in **Actions**(*state*) do:
-      - $v$ = max($v$, **MIN-VALUE**(**Result**(*state*, *action*)))
-  - return $v$
-<br>
-
-- Function **MIN-VALUE**(*state*):
-  - if **Terminal-Test**(*state*):
-    - return **Utility**(*state*)
-  - $v$ = $\infty$
-  - for each *action* in **Actions**(*state*) do:
-      - $v$ = min($v$, **MAX-VALUE**(**Result**(*state*, *action*)))
 
 ## Functions for Tic-Tac-Toe in runner.py
 
@@ -61,20 +42,91 @@ Possible actions are all empty squares.
 <img src="https://i.imgur.com/ydKWUlh.png" width="533">
 
 #### Result
-The result function returns the board that results from making move (i, j) on the board for the given player.
+The result function takes a *board* and an *action* as input and returns the board that results from making that move **without modifying the original board** (using <href="https://docs.python.org/3/library/copy.html#copy.deepcopy">deep copy</href>).
+- Assign a deep copy of  the new board to a variable
+- Assign row and column of the action to variables
+- If the action is not in the set of actions:
+    - Raise an exception
+- Add X or O to the board depending on the player. **IF** the player is X 
+  - **then** add X to the board
+  - otherwise add O to the board.
+- Return the new board
+
+##### Implemented code
+<img src="https://i.imgur.com/1KpU8Qf.png" width="566">
 
 #### Winner
 The winner function returns the winner of the game, if there is one.
+##### Implemented code
+<img src="https://i.imgur.com/FoQoFpd.png" width="500">
+
+> The code can be improved by using the loop only once. In this case, the code will be more efficient but will require more time to write.
+
+#### Helpers for winner function
+
+All functions are taking **board** and **player** as arguments.
+Retruns **True** if the player has won the game, **False** otherwise.
+#### Check rows
+Check if there is a winner in the rows.
+##### Implemented code
+<img src="https://i.imgur.com/HDLEhKk.png" width="500">
+#### Check columns
+Check if there is a winner in the columns.
+##### Implemented code
+<img src="https://i.imgur.com/zdGUzDQ.png" width="500">
+#### Check diagonals
+Check if there is a winner in the diagonals.
+##### Implemented code
+<img src="https://i.imgur.com/qSKohDp.png" width="500">
 
 #### Terminal-Test
 The terminal test function returns **True** if the game is over (win, loss or draw), **False** otherwise.
-I.e. the function returns **False** if the game is still in progress.
+> I.e. the function returns **False** if the game is still in progress.
+
+- **IF** the board has a winner **then** the game is over > return **True**
+- **IF** the board has empty cells **then** the game is not over > return **False**
+- **IF** there is no winner and no empty spaces, the game is over > return **True**
+##### Implemented code
+<img src="https://i.imgur.com/FbRKhvY.png" width="566">
 
 #### Utility
 The utility function returns the utility of the board. 
 1 if X has won the game, -1 if O has won, 0 otherwise.
+##### Implemented code
+<img src="https://i.imgur.com/wSOvZuL.png" width="500">
 
 #### Minimax
 The minimax function returns the optimal action for the current player on the board.
+- Given *state* $s$:
+    - **MAX** picks action $a$ that produces highest value of **Min-Value**(Result($s, a$))
+    - **MIN** picks action $a$ that produces lowest value of **Max-Value**(Result($s, a$))
 
-## Additioanl functions
+##### Implemented code
+<img src="https://i.imgur.com/G1o8kid.png" width="500">
+<br>
+<br>
+
+#### Max-Value
+- Function **MAX-VALUE**(*state*):
+  - if **Terminal-Test**(*state*):
+    - return **Utility**(*state*)
+  - $v$ = -$\infty$
+  - for each *action* in **Actions**(*state*) do:
+      - $v$ = max($v$, **MIN-VALUE**(**Result**(*state*, *action*)))
+  - return $v$
+
+##### Implemented code
+<img src="https://i.imgur.com/bVrSL7g.png" width="500">
+<br>
+
+#### Min-Value
+- Function **MIN-VALUE**(*state*):
+  - if **Terminal-Test**(*state*):
+    - return **Utility**(*state*)
+  - $v$ = $\infty$
+  - for each *action* in **Actions**(*state*) do:
+      - $v$ = min($v$, **MAX-VALUE**(**Result**(*state*, *action*)))
+      - 
+##### Implemented code
+<img src="https://i.imgur.com/KNbU2QI.png" width="500">
+
