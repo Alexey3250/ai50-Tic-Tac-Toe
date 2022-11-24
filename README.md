@@ -2,9 +2,12 @@
 
 #### Implementation of an AI to play Tic-Tac-Toe optimally
 
-This is a Tic-Tac-Toe game that I made for the CS50-AI course. It is a two player game, where the first player is X and the second player is O. The game is played on a 3x3 board. The first player to get 3 of their marks in a row (up, down, across, or diagonally) is the winner. If all 9 squares are filled and neither player has 3 marks in a row, the game is a draw.
+This is a Tic-Tac-Toe game that I made for the CS50-AI course.
+To Play the game, run the following command in the terminal:
+>python3 runner.py
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/MwaKjni" data-context="false" ><a href="//imgur.com/a/MwaKjni"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
+<img src="https://i.imgur.com/FSZiCva.gif" width="800" />
 
 https://cs50.harvard.edu/ai/2020/projects/0/tictactoe/
 
